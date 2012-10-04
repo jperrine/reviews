@@ -1,3 +1,6 @@
+%textarea
+  <iframe src="#{widgets_url(key: @reviewable_object.widget_key)}" />
+
 = link_to 'Edit', edit_reviewable_object_path(@reviewable_object)
 |
 \#{link_to 'Back', reviewable_objects_path}
