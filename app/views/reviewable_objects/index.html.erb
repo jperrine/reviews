@@ -1,0 +1,21 @@
+<h1>Listing reviewable_objects</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reviewable_objects.each do |reviewable_object| %>
+  <tr>
+    <td><%= link_to 'Show', reviewable_object %></td>
+    <td><%= link_to 'Edit', edit_reviewable_object_path(reviewable_object) %></td>
+    <td><%= link_to 'Destroy', reviewable_object, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Reviewable object', new_reviewable_object_path %>
