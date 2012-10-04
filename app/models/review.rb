@@ -9,4 +9,9 @@ class Review < ActiveRecord::Base
   def hide
     self.approved = false
   end
+
+  def as_json(options)
+    hash = attributes.except("reviewable_object_id")
+    hash.merge(reviewable_object_key: reviewable_object.widget_key)
+  end
 end

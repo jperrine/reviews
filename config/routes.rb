@@ -5,7 +5,7 @@ Reviews::Application.routes.draw do
 
   devise_for :users
 
-  resources :reviews, only: [:create] do
+  resources :reviews, only: [:create, :index] do
     put :hide, on: :member
     put :approve, on: :member
   end
