@@ -2,6 +2,7 @@ Reviews.Widgets = do ->
   success = (form) ->
     (data, status, xhr) ->
       form.hide()
+      $('#thanks').show()
 
   ajaxifyForm = (form) ->
     form.submit (e) ->
