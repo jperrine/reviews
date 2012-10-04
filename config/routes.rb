@@ -3,7 +3,7 @@ Reviews::Application.routes.draw do
 
   devise_for :users
 
-  resources :reviews, only: [:create]
+  resources :reviews, only: [:create, :index]
 
   namespace :api do
     resources :widgets, only: [:index]
