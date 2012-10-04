@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ReviewTemplateTest < ActiveSupport::TestCase
+class Api::WidgetsControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end

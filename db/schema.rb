@@ -11,25 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121004152440) do
-
-  create_table "review_templates", :force => true do |t|
-    t.text     "template"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20121004152424) do
 
   create_table "reviewable_objects", :force => true do |t|
     t.string   "name"
     t.string   "widget_key"
-    t.boolean  "moderation",         :default => false
-    t.integer  "review_template_id"
+    t.boolean  "moderation", :default => false
+    t.text     "template"
     t.integer  "user_id"
-    t.datetime "created_at",                            :null => false
-    t.datetime "updated_at",                            :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
-  add_index "reviewable_objects", ["review_template_id"], :name => "index_reviewable_objects_on_review_template_id"
+  add_index "reviewable_objects", ["user_id"], :name => "index_reviewable_objects_on_user_id"
 
   create_table "reviews", :force => true do |t|
     t.integer  "reviewable_object_id"

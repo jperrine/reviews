@@ -1,0 +1,14 @@
+=form_for(@review) do |f|
+  .input
+    %label Title
+    = f.text_field :title
+  .input
+    %label Review
+    %br
+    = f.text_area :body
+
+  =f.hidden_field :user_identifier
+  =f.hidden_field :reviewable_object_id
+
+  .actions
+    = f.submit

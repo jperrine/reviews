@@ -4,11 +4,11 @@ class CreateReviewableObjects < ActiveRecord::Migration
       t.string :name
       t.string :widget_key
       t.boolean :moderation, default: false
-      t.integer :review_template_id
+      t.text :template
       t.belongs_to :user
       t.timestamps
     end
 
-    add_index :reviewable_objects, :review_template_id
+    add_index :reviewable_objects, :user_id
   end
 end

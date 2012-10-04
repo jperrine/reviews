@@ -1,0 +1,19 @@
+= form_for(@reviewable_object) do |f|
+  - if @reviewable_object.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@reviewable_object.errors.count, "error")
+        prohibited this reviewable_object from being saved:
+      %ul
+        - @reviewable_object.errors.full_messages.each do |msg|
+          %li= msg
+  .input
+    %label Name
+    = f.text_field :name
+  .input
+    %label Template
+    %br
+    = f.text_area :template
+
+  .actions
+    = f.submit

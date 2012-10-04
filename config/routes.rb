@@ -3,6 +3,12 @@ Reviews::Application.routes.draw do
 
   devise_for :users
 
+  resources :reviews, only: [:create]
+
+  namespace :api do
+    resources :widgets, only: [:index]
+  end
+
   root :to => "reviewable_objects#index"
 
   # The priority is based upon order of creation:
