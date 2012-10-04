@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_filter :authenticate_user!, only: [:index, :hide, :approve]
+  before_filter :authenticate_user!, only: [:hide, :approve]
 
   def index
     respond_to do |format|
