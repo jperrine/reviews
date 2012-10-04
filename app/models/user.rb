@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :reviewable_objects
+  has_many :reviews, through: :reviewable_objects
 end

@@ -1,0 +1,19 @@
+%h1 Listing reviews
+%table
+  %tr
+    %th Title
+    %th Review
+    %th User Identifier
+    - if @reviewable_object.moderation?
+      %th Approved
+  - @reviews.each do |review|
+    %tr
+      %td= review.title
+      %td= review.body
+      %td= review.user_identifier
+      - if @reviewable_object.moderation?
+        %td= review.approved
+        - if review.approved?
+          %td= link_to 'Hide', hide_review_path(review), method: :put
+        - else
+          %td= link_to 'Approve', approve_review_path(review), method: :put

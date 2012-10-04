@@ -1,0 +1,1 @@
+window.Reviews = window.Reviews || {}

@@ -1,4 +1,4 @@
-class Api::WidgetsController < ApplicationController
+class WidgetsController < ApplicationController
   layout 'widget'
 
   def index

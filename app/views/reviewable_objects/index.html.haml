@@ -1,11 +1,15 @@
 %h1 Listing reviewable_objects
 %table
   %tr
+    %th Name
+    %th Reviews
     %th
     %th
     %th
   - @reviewable_objects.each do |reviewable_object|
     %tr
+      %td= reviewable_object.name
+      %td= link_to 'Reviews', [reviewable_object, :reviews]
       %td= link_to 'Show', reviewable_object
       %td= link_to 'Edit', edit_reviewable_object_path(reviewable_object)
       %td= link_to 'Destroy', reviewable_object, method: :delete, data: { confirm: 'Are you sure?' }

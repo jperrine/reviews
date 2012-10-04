@@ -1,13 +1,16 @@
 Reviews::Application.routes.draw do
-  resources :reviewable_objects
+  resources :reviewable_objects do
+    resources :reviews, only: [:index]
+  end
 
   devise_for :users
 
-  resources :reviews, only: [:create]
-
-  namespace :api do
-    resources :widgets, only: [:index]
+  resources :reviews, only: [:create] do
+    put :hide, on: :member
+    put :approve, on: :member
   end
+
+  resources :widgets, only: [:index]
 
   root :to => "reviewable_objects#index"
 
